@@ -1,0 +1,9 @@
+<div>
+  <span class="hover-cursor" [class.text-success]="item.isDone" (click)="update(item)">
+    <i class="far fa-lg" [ngClass]="item.isDone ? 'fa-check-circle' : 'fa-circle'"></i>
+  </span>
+  {{ item.todo }}
+  <span class="hover-cursor text-danger pull-right" (click)="delete(item.key)">
+    <i class="fa fa-trash fa-lg"></i>
+  </span>
+</div>

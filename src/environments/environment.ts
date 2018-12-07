@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyCvv_pV9978Q6grbzLYfd1PkKLDCecfxaM',
+    authDomain: 'ng-todo-auth.firebaseapp.com',
+    databaseURL: 'https://ng-todo-auth.firebaseio.com',
+    projectId: 'ng-todo-auth',
+    storageBucket: 'ng-todo-auth.appspot.com',
+    messagingSenderId: '253797366683'
+  }
 };
 
 /*

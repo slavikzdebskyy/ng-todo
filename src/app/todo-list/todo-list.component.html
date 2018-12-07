@@ -1,0 +1,14 @@
+<div class="input-group">
+  <input type="text" class="form-control" #todoTitle>
+  <div class="input-group-text hover-cursor" (click)="addTodo(todoTitle)">
+    <i class="fa fa-plus-circle fa-2x"></i>
+  </div>
+</div>
+
+<div>
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let item of todoListArray">
+      <app-todos [item]="item" (updateTodo)="update(item)" (deleteTodo)="remove(item.key)"></app-todos>
+    </li>
+  </ul>
+</div>
