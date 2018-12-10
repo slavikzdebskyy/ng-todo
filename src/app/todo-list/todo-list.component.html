@@ -1,9 +1,11 @@
-<div class="input-group">
-  <input type="text" class="form-control" #todoTitle>
-  <div class="input-group-text hover-cursor" (click)="addTodo(todoTitle)">
-    <i class="fa fa-plus-circle fa-2x"></i>
-  </div>
-</div>
+<form #addTodoForm="ngForm" (ngSubmit)="addTodo(todoTitle)">      
+  <div class="input-group">        
+    <input type="text" class="form-control" #todoTitle>
+    <button class="input-group-text hover-cursor"  type="submit">
+      <i class="fa fa-plus-circle fa-2x"></i>
+    </button>
+  </div>	      
+</form>
 
 <div>
   <ul class="list-group">
@@ -12,3 +14,8 @@
     </li>
   </ul>
 </div>
+
+
+    
+ 
+  

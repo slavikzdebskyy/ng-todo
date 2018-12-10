@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TodoService } from '../shared/todo.service';
 import { Todo } from '../todos/todo.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-list',
@@ -12,6 +13,9 @@ export class TodoListComponent implements OnInit {
 
   constructor(private todoService: TodoService) { }
 
+  @ViewChild('addTodoForm')
+  newTodoItemInForm: NgForm;
+  
   ngOnInit() {
     this.todoService.getListFromDb().snapshotChanges().subscribe(
       items => {
@@ -34,6 +38,7 @@ export class TodoListComponent implements OnInit {
   }
 
   addTodo(todoTitle) {
+    console.log('TODO =>', todoTitle )
     this.todoService.addToDb(todoTitle.value);
     todoTitle.value = null;
   }
