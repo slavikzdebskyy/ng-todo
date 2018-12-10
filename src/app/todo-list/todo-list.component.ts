@@ -7,7 +7,7 @@ import { Todo } from '../todos/todo.model';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
-export class TodoListComponent implements OnInit {
+export class TodoListComponent implements OnInit { 
   todoListArray: Todo[];
 
   constructor(private todoService: TodoService) { }
