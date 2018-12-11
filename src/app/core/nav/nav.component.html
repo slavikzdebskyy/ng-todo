@@ -1,3 +1,76 @@
-<p>
-  nav works!
-</p>
+<ul class="nav nav-pills">    
+  <li class="nav-item dropdown">
+    <a 
+      class="nav-link" 
+      data-toggle="dropdown" href="#" 
+      role="button" 
+      (click)="toggleMenu()" 
+      aria-haspopup="true" 
+      aria-expanded="false"
+    >
+      <i class="fas fa-sliders-h"></i>
+    </a>
+    <div [class]="menuClassName">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </li> 
+  <li class="nav-item">
+      <a 
+      class="nav-link" 
+      data-toggle="dropdown" href="#" 
+      role="button"       
+      aria-haspopup="true" 
+      aria-expanded="false"
+      (click)="openProfile()"
+    >
+      <i class="fas fa-sign-in-alt"></i>
+    </a>
+  </li>   
+</ul>
+
+<div class="user-profile-container" *ngIf="isOpenProfile" (click)="openProfile()">
+    <aside class="profile-card">
+        <header>
+          <a target="_blank" href="#">
+            <img src="http://lorempixel.com/150/150/people/" class="hoverZoomLink">
+          </a>
+          <h1>
+            John Doe
+          </h1>
+          <h2>
+            Better Visuals
+          </h2>      
+        </header>
+        <div class="profile-bio">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore doloribus nobis ab, quidem harum quibusdam pariatur?
+          </p>      
+        </div>
+        <ul class="profile-social-links">
+          <li>
+            <a target="_blank" href="#">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="#">
+                <i class="fab fa-google-plus-square"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="#">
+                <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="#">             
+                <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </aside>
+</div>
